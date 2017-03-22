@@ -6,5 +6,9 @@ set project=%1\%1.csproj
 
 if not defined configuration set configuration=Release
 
+echo %scripts%
+echo %project%
+echo %configuration% 
+
 %scripts%\Nuget\nuget.exe pack %project% -Symbols -Prop Configuration=%configuration% -OutputDirectory %scripts%\..
 if %errorlevel% neq 0 exit /b %errorlevel%
