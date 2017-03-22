@@ -26,6 +26,8 @@ test_script:
 - cmd: _build\test.bat Configgy.NetFramework
 
 after_test:
+- pwd
+- dir /s
 - cmd: _build\package.bat Configgy.NetFramework
 
 artifacts:
