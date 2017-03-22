@@ -10,7 +10,5 @@ echo %scripts%
 echo %project%
 echo %configuration% 
 
-type %project%
-
-%scripts%\Nuget\nuget.exe pack %project% -Symbols -Prop Configuration=%configuration% -OutputDirectory %scripts%\..
+%scripts%\Nuget\nuget.exe pack %project% -Symbols -Prop Configuration=%configuration% -OutputDirectory %scripts%\.. -Prop Platform=AnyCPU
 if %errorlevel% neq 0 exit /b %errorlevel%
